@@ -63,7 +63,7 @@ brew install --cask font-psudofont-liga-mono
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/dotfiles.git ~/.dotfiles
+git clone https://github.com/katzio/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ```
 
