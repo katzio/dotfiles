@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Neovim
+nvim/lazy-lock.json
+
+# Sensitive data (uncomment if needed)
+# git/gitconfig
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Claude Code
+.claude/settings.local.json
+
+# Temporary files
+*.log
+*.tmp

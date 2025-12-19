@@ -1,0 +1,119 @@
+# This is the configuration file for Ghostty.
+#
+# Standard config location on macOS:
+#   ~/Library/Application Support/com.mitchellh.ghostty/config
+#
+# This file should be symlinked to the above location.
+# See README.md for installation instructions.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+#
+# Ghostty can reload the configuration while running by using the menu
+# options or the bound key (default: Command + Shift + comma on macOS and
+# Control + Shift + comma on other platforms). Not all config options can be
+# reloaded while running; some only apply to new windows and others may require
+# a full restart to take effect.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+
+# Set command to zsh
+command = /bin/zsh
+
+# Terminal type
+term = xterm-256color
+
+# Window size
+window-width = 80
+window-height = 25
+
+# Font
+font-family = psudoFont Liga Mono
+font-size = 15
+font-style = Regular
+
+theme = TokyoNight
+
+
+# Window decoration and appearance
+window-decoration = true
+macos-titlebar-style = transparent
+window-show-tab-bar = never
+window-theme = auto
+background-opacity = 0.95
+background-blur = 40
+
+# Window padding
+window-padding-x = 5
+window-padding-y = 0
+window-padding-balance = true
+# Scrollback (in bytes - default is 10000000)
+scrollback-limit = 10000000
+
+# Split navigation (works from within nvim normal mode)
+# Use Cmd+Shift+h/j/k/l for vim-style movement between splits
+keybind = cmd+shift+h=goto_split:left
+keybind = cmd+shift+j=goto_split:bottom
+keybind = cmd+shift+k=goto_split:top
+keybind = cmd+shift+l=goto_split:right
+
+# Create new splits
+keybind = cmd+shift+d=new_split:right
+keybind = cmd+d=new_split:down
+
+# Close current split
+keybind = cmd+shift+w=close_surface
+
+# Resize splits (optional)
+keybind = cmd+ctrl+h=resize_split:left,10
+keybind = cmd+ctrl+j=resize_split:down,10
+keybind = cmd+ctrl+k=resize_split:up,10
+keybind = cmd+ctrl+l=resize_split:right,10
+
+# Toggle split zoom (focus on one split, then back to all splits)
+keybind = cmd+shift+z=toggle_split_zoom
+
+# Cmd+t sends tmux command to create new window (Ctrl+a then c)
+keybind = super+t=text:\x01c
+
+# Cmd+Shift+[ and ] for tmux previous/next window (Ctrl+a then p/n)
+keybind = cmd+shift+left_bracket=text:\x01p
+keybind = cmd+shift+right_bracket=text:\x01n
+
+# Save and restore window state (splits, tabs, position, size)
+window-save-state = always
+
+# Enable shell integration for better working directory restoration
+shell-integration = zsh
+
+# macOS Option key behavior - send Alt/Meta sequences for tmux
+# This allows Alt+hjkl to work in tmux
+macos-option-as-alt = true
