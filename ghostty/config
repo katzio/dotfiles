@@ -56,9 +56,9 @@ window-width = 80
 window-height = 25
 
 # Font
-font-family = psudoFont Liga Mono
-font-size = 15
-font-style = Regular
+font-family = Cascadia Code
+font-size = 17
+font-style = Light
 
 theme = TokyoNight
 

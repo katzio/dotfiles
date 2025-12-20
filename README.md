@@ -11,7 +11,7 @@ This repository contains my carefully curated dotfiles for a modern, efficient t
 - **Terminal Multiplexer**: tmux with system monitoring (CPU/RAM) and custom keybindings
 - **Beautiful Shell**: zsh with powerlevel10k theme and fzf integration
 - **Consistent Git**: Standardized git configuration
-- **Custom Font**: psudoFont Liga Mono with programming ligatures
+- **Custom Font**: Cascadia Code with programming ligatures
 
 ## Contents
 
@@ -52,10 +52,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ### Fonts
 
-Install [psudoFont Liga Mono](https://github.com/psudo-dev/psudofont-liga-mono):
+Install [Cascadia Code](https://github.com/microsoft/cascadia-code):
 ```bash
 brew tap homebrew/cask-fonts
-brew install --cask font-psudofont-liga-mono
+brew install --cask font-cascadia-code
 ```
 
 ## Installation
@@ -175,7 +175,7 @@ git config --global user.email "your.email@example.com"
 
 ### Fonts not showing correctly
 
-Make sure psudoFont Liga Mono is installed and selected in your terminal settings.
+Make sure Cascadia Code is installed and selected in your terminal settings.
 
 ### tmux plugins not loading
 
@@ -191,7 +191,7 @@ Open Neovim and run `:Lazy sync` to install/update all plugins.
 - [LazyVim](https://www.lazyvim.org/) - Amazing Neovim configuration
 - [Ghostty](https://ghostty.org/) - Fast, native terminal emulator
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k) - Beautiful zsh theme
-- [psudoFont Liga Mono](https://github.com/psudo-dev/psudofont-liga-mono) - Excellent programming font
+- [Cascadia Code](https://github.com/microsoft/cascadia-code) - Excellent programming font
 
 ## License
 
