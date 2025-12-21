@@ -38,6 +38,22 @@ return {
     -- Right side - File info
     opts.sections.lualine_x = {
       {
+        -- Show macro recording status
+        function()
+          local recording_register = vim.fn.reg_recording()
+          if recording_register == "" then
+            return ""
+          else
+            return "Recording @" .. recording_register
+          end
+        end,
+        color = { fg = "#ff9e64" },
+      },
+      {
+        -- Show search count
+        "searchcount",
+      },
+      {
         function()
           local msg = "No LSP"
           local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
@@ -60,8 +76,13 @@ return {
     -- Progress percentage
     opts.sections.lualine_y = { "progress" }
 
-    -- Line:column info (no clock)
-    opts.sections.lualine_z = { "location" }
+    -- Line:column info with cursor marker
+    opts.sections.lualine_z = {
+      {
+        "location",
+        icon = "",
+      },
+    }
 
     return opts
   end,

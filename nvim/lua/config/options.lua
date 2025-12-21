@@ -29,6 +29,10 @@ vim.cmd([[
 vim.opt.scrolloff = 8 -- keep 8 lines visible when scrolling
 vim.opt.sidescrolloff = 8
 
+-- Show partial commands in the command line (what keys you're pressing)
+vim.opt.showcmd = true
+-- Don't set showcmdloc, let it default to command line area
+
 -- Global diagnostic config: wrap long error messages
 vim.diagnostic.config({
   float = {
