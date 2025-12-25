@@ -7,23 +7,7 @@ return {
     {
       "<leader><leader>",
       function()
-        -- Get current buffer's directory relative to cwd
-        local current_file = vim.api.nvim_buf_get_name(0)
-        local current_dir = vim.fn.fnamemodify(current_file, ":h")
-        local cwd = vim.fn.getcwd()
-        local relative_dir = vim.fn.fnamemodify(current_dir, ":~:.")
-
-        -- Make sure it ends with / and doesn't start with ./
-        if relative_dir ~= "." then
-          relative_dir = relative_dir:gsub("^%./", "") .. "/"
-        else
-          relative_dir = ""
-        end
-
         require("fzf-lua").files({
-          fzf_opts = {
-            ["--query"] = relative_dir,
-          },
           winopts = {
             split = "belowright new", -- Opens in bottom split
             height = 0.4, -- 40% height

@@ -28,6 +28,40 @@ return {
         enabled = false,
       })
 
+      -- Enable ruby-lsp (gem installed via rbenv)
+      opts.servers.ruby_lsp = {
+        mason = false, -- Don't use mason, use gem version
+        enabled = true,
+        cmd = { os.getenv("HOME") .. "/.rbenv/shims/ruby-lsp" },
+      }
+
+      -- Enable basedpyright for Python (modern, faster alternative to pyright)
+      opts.servers.basedpyright = {
+        mason = true,
+        enabled = true,
+        settings = {
+          basedpyright = {
+            analysis = {
+              typeCheckingMode = "basic",
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+            },
+          },
+        },
+      }
+
+      -- Enable ruff for Python linting/formatting
+      opts.servers.ruff = {
+        mason = true,
+        enabled = true,
+      }
+
+      -- Enable clojure-lsp
+      opts.servers.clojure_lsp = {
+        mason = true,
+        enabled = true,
+      }
+
       -- Remove <C-k> from LSP keys (we use it for cursor movement in insert mode)
       if opts.servers and opts.servers["*"] and opts.servers["*"].keys then
         local keys = opts.servers["*"].keys

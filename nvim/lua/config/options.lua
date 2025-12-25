@@ -2,6 +2,10 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- Ensure rbenv Ruby is available in nvim's PATH for LSP/Mason
+local home = os.getenv("HOME")
+vim.env.PATH = home .. "/.rbenv/shims:" .. vim.env.PATH
+
 -- Configure font for GUI clients (Neovide, etc.)
 if vim.g.neovide then
   vim.g.neovide_font_face = "psudoFont Liga Mono"
